@@ -1,10 +1,10 @@
 import numpy as np
 import cv2
 
+image = cv2.imread('phone.jpg') #Providing image as input
 
-ims = cv2.imread('phone.jpg')
-image = cv2.imread('phone.jpg')
-def getcontours(img,cThr=[100,100],showCanny=False):
+#Function for finding the contours and measuring the object
+def getcontours(img,cThr=[100,100],showCanny=False):          
     
     image_greyscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     image_blur = cv2.GaussianBlur(image,(7,7),0)
@@ -28,7 +28,7 @@ def getcontours(img,cThr=[100,100],showCanny=False):
         He = h*0.02645833
         
         cv2.polylines(image,[box],True,(0,255,0),2)
-        cv2.putText(image,"Width : {}cm".format(round(Wi,1)),(int(x-490),int(y - 15)), cv2.FONT_HERSHEY_PLAIN,3,(100,0,0),2)
+        cv2.putText(image,"Width : {}cm".format(round(Wi,1)),(int(x-490),int(y - 15)), cv2.FONT_HERSHEY_PLAIN,3,(100,0,0),2)   #Printing the values on the screen
         cv2.putText(image,"Height : {}cm".format(round(He,1)),(int(x-490),int(y - 100)), cv2.FONT_HERSHEY_PLAIN,3,(100,0,0),2)
         print(box)
     
@@ -38,5 +38,4 @@ getcontours(image,showCanny=True)
 cv2.imshow('frame',image)
 cv2.waitKey(0)
         
-# When everything done, release the capture
 cv2.destroyAllWindows()
