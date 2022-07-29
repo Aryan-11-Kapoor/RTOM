@@ -127,7 +127,7 @@ def main():
 
 
     if choice =="Real Time":
-        cap = cv2.VideoCapture('http://192.168.1.10:8080/video')
+        #cap = cv2.VideoCapture('http://192.168.1.10:8080/video')
         parameters = cv2.aruco.DetectorParameters_create()
         aruco_dict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_6X6_100)
         st.image('https://miro.medium.com/max/568/1*Y1S4hciQTfrB3xJuk2remA.png')
