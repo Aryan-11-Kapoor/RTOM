@@ -78,10 +78,10 @@ for c in cnts:
 	dimB = dB / pixelsPerMetric
 	# draw the object sizes 
 	cv2.putText(orig, "{:.1f}in".format(dimA),
-		(int(upper_left_upper_rightX - 15), int(upper_left_upper_rightY - 10)), cv2.FONT_HERSHEY_PLAIN,
+		(int(upper_left_upper_rightX - 15), int(upper_left_upper_rightY - 10)), cv2.FONT_HERSHEY_COMPLEX,
 		0.65, (255, 255, 255), 2)
 	cv2.putText(orig, "{:.1f}in".format(dimB),
-		(int(upper_rightbrX + 10), int(upper_rightbrY)), cv2.FONT_HERSHEY_PLAIN,
+		(int(upper_rightbrX + 10), int(upper_rightbrY)), cv2.FONT_HERSHEY_COMPLEX,
 		0.65, (255, 255, 255), 2)
 	
 	cv2.imshow("Image", orig)
