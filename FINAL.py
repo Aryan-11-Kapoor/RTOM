@@ -18,6 +18,11 @@ FRAME_WINDOW = st.image([])
 Frame = st.image([])
 circleframe = st.image([])
 
+sideb = st.sidebar
+check1 = sideb.button("Rectangle")
+check2 = sideb.button("Circle")
+check3 = sideb.button("Stop")
+
 def getcontours(img,cThr=[100,200],showCanny=False):
         
         image_greyscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -113,17 +118,11 @@ def getcircles(img):
 while(True):
     _, image = cap.read()
     FRAME_WINDOW.image(image) 
-    getcontours(image,showCanny=True)
-    
-    getcircles(image)
-                
-    cv2.imshow('frame',image)
-    
-
-    if cv2.waitKey(20) & 0xFF == ord('q'):
+    if check1:
+        getcontours(image,showCanny=True)
+    elif check2:
+        getcircles(image)
+    elif check3:
         break
-            
-
-    # When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
+        cap.release()
+        cv2.destroyAllWindows()
