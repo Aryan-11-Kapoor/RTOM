@@ -1,5 +1,7 @@
 import numpy as np
 import cv2
+import streamlit as st
+from PIL import Image
 
 
 cap = cv2.VideoCapture('http://192.168.25.243:8080/video')
