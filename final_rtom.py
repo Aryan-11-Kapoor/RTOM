@@ -6,9 +6,12 @@ cap = cv2.VideoCapture('http://192.168.25.243:8080/video')
 parameters = cv2.aruco.DetectorParameters_create()
 aruco_dict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_6X6_100)
 
-
-
-
+st.title("OpenCV Demo App")
+st.subheader("This app allows you to play with Image filters!")
+st.text("We use OpenCV and Streamlit for this demo")
+FRAME_WINDOW = st.image([])
+Frame = st.image([])
+circleframe = st.image([])
 
 def getcontours(img,cThr=[100,200],showCanny=False):
         
@@ -52,7 +55,7 @@ def getcontours(img,cThr=[100,200],showCanny=False):
                     cv2.polylines(image,[box],True,(0,255,0),2)
                     cv2.putText(image,"Width : {}".format(round(wide,1)),(int(x),int(y - 15)), cv2.FONT_HERSHEY_PLAIN,3,(0,0,100),3)
                     cv2.putText(image,"Height : {}".format(round(tall,1)),(int(x),int(y - 100)), cv2.FONT_HERSHEY_PLAIN,3,(0,0,100),3)
-                    
+                    Frame.image(image)
             key = cv2.waitKey(1)
             
             if key == ord('s'): 
@@ -98,12 +101,13 @@ def getcircles(img):
                             cv2.putText(img,"Width : {}".format(round(r,1)),org =(200,200), fontFace = cv2.FONT_HERSHEY_PLAIN,fontScale = 3,color = (100,0,0),thickness = 2)
                             # Draw a small circle (of radius 1) to show the center.
                             cv2.circle(img, (a, b), 1, (0, 0, 255), 3)
-                    
+                            circleframe.image(img)
             key = cv2.waitKey(1)
 
 
 while(True):
     _, image = cap.read()
+    FRAME_WINDOW.image(image) 
     getcontours(image,showCanny=True)
     
     getcircles(image)
