@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.title("Real Time Object Measurement")
+annotated_text(("open","CV","#269e98"),("with","python","#d16c06"),)
 st.subheader("This app allows you to measure objects in real time with your webcam!")
 st.text("We use OpenCV and Streamlit for this demo")
 if st.checkbox("Main Checkbox"):
