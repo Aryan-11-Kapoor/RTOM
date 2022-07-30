@@ -28,6 +28,9 @@ with st.sidebar:
      st.sidebar.text("4.Enter IP address")
      st.sidebar.text("5.Point webcam such that arUco marker and object are in the same frame")
      st.sidebar.text("6.Enjoy the real-time accuracy !!")
+    
+     st.warning("Real time measurement won't workout without arUco marker")
+     st.info('Please do find the instructions and link to download the arUco marker below ')
      
     
 
