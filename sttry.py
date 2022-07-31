@@ -32,6 +32,28 @@ with st.sidebar:
     
      st.warning("Real time measurement won't workout without arUco marker")
      st.info('Please do find the instructions and link to download the arUco marker below ')
+    
+    
+    with st.sidebar:
+   
+   
+      with st.expander("INSTRUCTIONS"):
+
+
+        st.write("""
+      1.Download the aruco marker PDF
+
+      2.Print the PDF
+
+      3.Place object to be measured beside arUco marker
+
+      4.Enter IP address
+
+      5.Point webcam such that arUco marker and object are in the same frame
+      
+      6.Enjoy the real-time accuracy !!
+     """)
+   
      
     
 
