@@ -34,6 +34,7 @@ st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}', unsafe_allo
 
 options = st.sidebar.radio("Choose",('Real','Static'))
 if options == 'Real':
+     st.subheader("This app allows you to measure objects in real time with your webcam!")
     with st.sidebar:
         with st.expander("INSTRUCTIONS TO USE IPWEBCAM"):
             #st.sidebar.title("INSTRUCTIONS TO USE IPWEBCAM")
