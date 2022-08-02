@@ -95,6 +95,7 @@ elif options == 'Static':
 
         if satisfied:
             st.snow()
+            st.write('Thanks :)')
           
         with st.sidebar:
             with st.expander("INSTRUCTIONS TO USE"):
