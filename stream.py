@@ -85,6 +85,7 @@ if options == 'Real':
         pass
 elif options == 'Static':
     try:
+         st.subheader("This app also allows you to measure static objects !")
         with st.sidebar:
             with st.expander("INSTRUCTIONS TO USE"):
                 
