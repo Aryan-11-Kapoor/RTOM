@@ -25,8 +25,7 @@ st.title("Real Time Object Measurement")
 annotated_text(("open","CV","#269e98"),("with","python","#d16c06"),)
 
 st.text("We use OpenCV and Streamlit for this demo")
-if st.checkbox("Main Checkbox"):
-    st.text("Are you ready?")
+
 
 
 
