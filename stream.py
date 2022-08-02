@@ -41,6 +41,7 @@ if options == 'Real':
                 st.write("2.Open the App")
                 st.write("3.Scroll down and click on Start Server. Your Mobile's Camera will be turned on")
                 st.write("4.Notedown the IP Address displayed")
+                st.info("Here's the link to install it from the PlayStore:https://tinyurl.com/ipwebcamdownload")
              
         with st.expander("WHAT IS AN ARUCO MARKER?"):
             st.write("""
