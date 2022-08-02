@@ -89,8 +89,7 @@ elif options == 'Static':
                 
                 st.info("""While takingapicture make sure to place your reference object on the left most part of your picture.
                         Your reference object can be anything of your choice,provided you know the width of the said object.""")
-                #image = Image.open('C:\Users\BHARA\Desktop\RTOM\bad.jpg')
-                #st.image(image, width= use_column_width=True)
+                st.image("prop.jpeg",caption='Coin in this particular case')
                 st.warning('Width of the reference object is in INCHES ')
         static()
     except:
