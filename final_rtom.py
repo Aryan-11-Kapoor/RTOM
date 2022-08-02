@@ -151,7 +151,7 @@ def live():
                 elif check2:
                     getcircles(image)
         elif options == 'Stop':
-                st.write("uuu")
+                
                 cap.release()
                 cv2.destroyAllWindows()
                 
