@@ -90,6 +90,12 @@ if options == 'Real':
 elif options == 'Static':
     try:
          st.subheader("This app also allows you to measure static objects !")
+          
+        satisfied=st.checkbox('Are you satisfied with the results?')
+
+        if satisfied:
+            st.snow()
+          
         with st.sidebar:
             with st.expander("INSTRUCTIONS TO USE"):
                 
