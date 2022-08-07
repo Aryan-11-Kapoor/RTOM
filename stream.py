@@ -10,42 +10,25 @@ from scipy.spatial import distance as dist
 from final_rtom import *
 from badacc import *
 from annotated_text import annotated_text
-st.write('<style>.css-1yjuwjr{font-size:22px;}', unsafe_allow_html=True)
-st.write('<style>.st-af{font-size:1.3rem;}', unsafe_allow_html=True)
-st.write('<style>.st-cw{height:1.6rem;}', unsafe_allow_html=True)
-st.write('<style>.st-d2{width:1.6rem;}', unsafe_allow_html=True)
-st.write('<style>.st-d6{height:8px;}', unsafe_allow_html=True)
-st.write('<style>.st-d7{width:8px;}', unsafe_allow_html=True)
-st.write('<style>code{font-size:1.1em;}', unsafe_allow_html=True)
-st.write('<style>p{font-size:1.2rem;}', unsafe_allow_html=True)
-
 
 
 st.title("Real Time Object Measurement")
 annotated_text(("open","CV","#269e98"),("with","python","#d16c06"),)
 
-st.text("We use OpenCV and Streamlit for this demo")
-
-
-
-
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}', unsafe_allow_html=True)
 
 options = st.sidebar.radio("Choose",('Real','Static'))
 if options == 'Real':
-     st.subheader("This app allows you to measure objects in real time with your webcam!")
-     
-     like = st.slider('How satisfied are you with the measurements?', 0, 10, 1)
-    if like >=5:
-        st.balloons()
+    st.subheader("This app allows you to measure objects in real time with your webcam!")
+    st.text("We use OpenCV and Streamlit for this demo")
+    
     with st.sidebar:
-        with st.expander("INSTRUCTIONS TO USE IPWEBCAM"):
+        with st.expander("INSTRUCTIONS TO USE IP WEBCAM"):
             #st.sidebar.title("INSTRUCTIONS TO USE IPWEBCAM")
                 st.write("1.Download the IP Webcam App from PlayStore on your Mobile")
                 st.write("2.Open the App")
                 st.write("3.Scroll down and click on Start Server. Your Mobile's Camera will be turned on")
                 st.write("4.Notedown the IP Address displayed")
-                st.info("Here's the link to install it from the PlayStore:https://tinyurl.com/ipwebcamdownload")
              
         with st.expander("WHAT IS AN ARUCO MARKER?"):
             st.write("""
@@ -80,30 +63,34 @@ if options == 'Real':
         st.markdown('##')
         
             
-        
-           
-    #st.success("You are measuring in real time")
     try:    
         live()
     except:
         pass
 elif options == 'Static':
-    try:
-         st.subheader("This app also allows you to measure static objects !")
-          
+   
+    st.subheader("This app also allows you to measure static objects !")
+    with st.sidebar:
+        with st.expander("INSTRUCTIONS TO USE"):
+                
+                st.info("""While takingapicture make sure to place your reference object on the left most part of your picture.
+                        Your reference object can be anything of your choice,provided you know the width of the said object.""")
+                st.image("bad.jpg",caption='Coin in this particular case')
+                st.warning('Width of the reference object is in INCHES ')
+        
         satisfied=st.checkbox('Are you satisfied with the results?')
-
         if satisfied:
             st.snow()
             st.write('Thanks :)')
-          
-        with st.sidebar:
-            with st.expander("INSTRUCTIONS TO USE"):
-                
-                st.info("""While taking a picture make sure to place your reference object on the left most part of your picture.
-                        Your reference object can be anything of your choice,provided you know the width of the said object.""")
-                st.image("prop.jpeg",caption='Coin in this particular case')
-                st.warning('Width of the reference object is in INCHES ')
+    try:
         static()
     except:
         pass
+st.write('<style>.css-1yjuwjr{font-size:22px;}', unsafe_allow_html=True)
+st.write('<style>.st-af{font-size:1.2rem;}', unsafe_allow_html=True)
+st.write('<style>.st-cw{height:1.6rem;}', unsafe_allow_html=True)
+st.write('<style>.st-d2{width:1.6rem;}', unsafe_allow_html=True)
+st.write('<style>.st-d6{height:8px;}', unsafe_allow_html=True)
+st.write('<style>.st-d7{width:8px;}', unsafe_allow_html=True)
+st.write('<style>code{font-size:1.1em;}', unsafe_allow_html=True)
+st.write('<style>p{font-size:1.2rem;}', unsafe_allow_html=True)
