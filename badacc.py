@@ -9,23 +9,10 @@ from scipy.spatial import distance as dist
 import streamlit as st
 from PIL import Image
 
-
-
-
-
-
-
-
-
 def static():
         image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg"])
-        
-        
-        
         def mp(x,y):
             return((x[0]+y[0])*0.5,(x[1]+y[1])*0.5)
-
-        
 
         my_img = image_file.name
         if image_file.name:
